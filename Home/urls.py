@@ -19,6 +19,12 @@ from django.urls import *
 
 urlpatterns = [
     path('', include('main.urls')),
+    path('videos/', include('videos.urls')),
+    path('songs/', include('songs.urls')),
+    path('progms/', include('progms.urls')),
+    path('posts/', include('posts.urls')),
+    path('pics/', include('pics.urls')),
+    path('movies/', include('movies.urls')),
     path('signin/', include('signin.urls')),
     path('venom/', include('venom.urls')),
     path('admin/', admin.site.urls),
