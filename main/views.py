@@ -9,3 +9,8 @@ def main(request):
     data = {'p': p[0]}
     res = render(request, 'main.html', context=data)
     return res
+
+def homee(request):
+    data = {}
+    res = render(request, 'home.html', context=data)
+    return res
