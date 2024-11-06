@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [f"192.168.1.{str(x)}" for x in range(0, 256)]
 ALLOWED_HOSTS.append('127.0.0.1')
+ALLOWED_HOSTS.append('192.168.217.130')
 
 
 # Application definition
