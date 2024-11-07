@@ -14,3 +14,8 @@ def homee(request):
     data = {}
     res = render(request, 'home.html', context=data)
     return res
+
+def about(request):
+    data = {}
+    res = render(request, 'about.html', context=data)
+    return res
