@@ -1,6 +1,7 @@
 from django.shortcuts import *
 from django.http import *
 from pics.models import *
+import base64
 
 # Create your views here.
 
@@ -18,4 +19,13 @@ def homee(request):
 def about(request):
     data = {}
     res = render(request, 'about.html', context=data)
+    return res
+
+def profile(request):
+    uv = request.COOKIES['uv']
+    print(uv)
+    um = base64.b64decode()
+    print(um) 
+    data = {}
+    res = render(request, 'profile.html', context=data)
     return res

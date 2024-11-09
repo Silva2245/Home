@@ -3,6 +3,7 @@ from django.http import *
 from .forms import *
 from .models import *
 from hashlib import *
+import base64
 
 # Create your views here.
 
@@ -17,7 +18,11 @@ def signinhome(request):
         memb = mem.get(uname=unamee)
         p = memb.passwd
         if p == pv:
-            r = redirect('main:main')
+            us = md5(unamee.encode('ascii'))
+            uv = base64.b64encode(unamee.encode('ascii'))
+            r = redirect('main:profile')
+            r.set_cookie('uv', uv)
+            r.set_cookie('pv', pv)
             return r
     data = {'frm': frm}
     res = render(request, 'signin.html', context=data)
